@@ -1,0 +1,277 @@
+{
+  "main": {
+    "id": "7d290ef3546624a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa95bca55a0efd5d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "70f92230f2329848",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 2 Standards & templates.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 2 Standards & templates"
+            }
+          },
+          {
+            "id": "f755284767c05cc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 2 Standards & templates.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 2 Standards & templates"
+            }
+          },
+          {
+            "id": "57c2db7a5c5b40cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cargo-Cult anti pattern.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cargo-Cult anti pattern"
+            }
+          },
+          {
+            "id": "7a6b3ae3f554925f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 3 Writing the SRS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 3 Writing the SRS"
+            }
+          },
+          {
+            "id": "5bb0827be3fe0523",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 3 Writing the SRS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 3 Writing the SRS"
+            }
+          },
+          {
+            "id": "404262b2f206575f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 4 Arc42  +C4.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 4 Arc42  +C4"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b94589f53dc6bd3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9164bb0cdec53eee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "31fc1900b69ca5f5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9635a43f6c5d6253",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "85bd1b0bbc015259",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "d48430df18ac7726",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5849cc5d766fc62",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "343a127050bc4c42",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Cargo-Cult anti pattern.md",
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "8b048dd9552cfa36",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Lecture 1 Why documentation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "795045f8edd79393",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "66c5649c43a96f40",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "98e57f604e0f1803",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Lecture 1 Why documentation.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "404262b2f206575f",
+  "lastOpenFiles": [
+    "Lecture 3 Writing the SRS.md",
+    "Lecture 4 Arc42  +C4.md",
+    "Usability.md",
+    "Lecture 2 Standards & templates.md",
+    "Pasted image 20260915114356.png",
+    "Lecture 1 Why documentation.md",
+    "Cargo-Cult anti pattern.md",
+    "SUS Score.md",
+    "Pasted image 20260908120908.png",
+    "Untitled.base",
+    "Welcome.md"
+  ]
+}
