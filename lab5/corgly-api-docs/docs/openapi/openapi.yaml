@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  title: Corg.ly Pet Onboarding & Translation API
+  version: 1.0.0
+  description: Official API documentation for pet registration, voice translation, and webhooks.
+servers:
+  - url: https://api.corg.ly/v1
+    description: Production Server
+
+paths:
+  /pets:
+    get:
+      summary: List all registered pets
+      operationId: listPets
+      responses:
+        '200':
+          description: A list of pets
+          content:
+            application/json:
+              example:
+                - pet_id: "corgi_98231"
+                  pet_name: "Einstein"
+                  breed: "Pembroke Welsh Corgi"
+                  photo_url: "https://media.corg.ly/photos/einstein.jpg"
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PetProfile'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /pets/{pet_id}:
+    get:
+      summary: Retrieve specific pet details
+      operationId: getPetById
+      parameters:
+        - name: pet_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "corgi_98231"
+      responses:
+        '200':
+          description: Pet details found
+          content:
+            application/json:
+              example:
+                pet_id: "corgi_98231"
+                pet_name: "Einstein"
+                breed: "Pembroke Welsh Corgi"
+                photo_url: "https://media.corg.ly/photos/einstein.jpg"
+              schema:
+                $ref: '#/components/schemas/PetProfile'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /pets/upload-photo:
+    post:
+      summary: Upload a pet profile photo
+      operationId: uploadPetPhoto
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [pet_id, photo]
+              properties:
+                pet_id:
+                  type: string
+                  example: "corgi_98231"
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Photo uploaded successfully
+          content:
+            application/json:
+              example:
+                status: "success"
+                photo_url: "https://media.corg.ly/photos/einstein.jpg"
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /audio/translate-bark:
+    post:
+      summary: Translate pet bark audio to English text
+      operationId: translateBark
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [audio_file]
+              properties:
+                audio_file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Audio processed successfully
+          content:
+            application/json:
+              example:
+                translation: "I demand treats immediately!"
+                confidence: 0.98
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /webhooks/subscribe:
+    post:
+      summary: Subscribe to pet activity webhooks
+      operationId: subscribeWebhook
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [target_url, event_type]
+              properties:
+                target_url:
+                  type: string
+                  example: "https://myapp.com/webhooks/corgly"
+                event_type:
+                  type: string
+                  example: "pet.bark_detected"
+      responses:
+        '201':
+          description: Webhook subscription created
+          content:
+            application/json:
+              example:
+                subscription_id: "sub_88321"
+                status: "active"
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    PetProfile:
+      type: object
+      required: [pet_id, pet_name, breed]
+      properties:
+        pet_id:
+          type: string
+          example: "corgi_98231"
+        pet_name:
+          type: string
+          example: "Einstein"
+        breed:
+          type: string
+          example: "Pembroke Welsh Corgi"
+        photo_url:
+          type: string
+          example: "https://media.corg.ly/photos/einstein.jpg"
+
+  responses:
+    BadRequestError:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          example:
+            error: "Bad Request"
+            message: "Missing required form-data field"
+    UnauthorizedError:
+      description: Missing or invalid JWT auth token
+      content:
+        application/json:
+          example:
+            error: "Unauthorized"
+            message: "Bearer token invalid"
+    NotFoundError:
+      description: Requested resource was not found
+      content:
+        application/json:
+          example:
+            error: "Not Found"
+            message: "Resource does not exist"
+    ServerError:
+      description: Internal server error
+      content:
+        application/json:
+          example:
+            error: "Internal Server Error"
+            message: "An unexpected error occurred"
